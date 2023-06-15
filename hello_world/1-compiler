@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -c $CFILE > mv $CFILE ${CFILE%.c}.o
