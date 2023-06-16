@@ -1,6 +1,11 @@
 #include <stdio.h>
-
-int main() {
-	puts("Programming is like building a multilingual puzzle");
-	return 0;
+/**
+* main - print a text
+*
+* Return: always return 0
+*/
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
 }
