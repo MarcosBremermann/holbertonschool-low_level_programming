@@ -16,10 +16,9 @@ void times_table(void)
 		{
 			int res = row * col;
 
-			_putchar("%d", res);
+			_putchar('0' + (res));
 		}
 		col = 0;
 		_putchar("\n");
 	}
-
 }
