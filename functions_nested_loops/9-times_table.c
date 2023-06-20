@@ -19,6 +19,6 @@ void times_table(void)
 			_putchar('0' + (res));
 		}
 		col = 0;
-		_putchar("\n");
+		_putchar('\n');
 	}
 }
