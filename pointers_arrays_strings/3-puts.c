@@ -10,6 +10,6 @@ void _puts(char *str)
 {
 	int a = *str;
 
-	_putchar(a);
+	_putchar('0' + a);
 	_putchar('\n');
 }
