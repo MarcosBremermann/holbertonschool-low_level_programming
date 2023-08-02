@@ -60,15 +60,15 @@ int copy_file(const char *file_from, const char *file_to)
 	if (fd_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		return (98);
+		exit(98);
 	}
 
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, permissions);
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %i\n", fd_to);
-		close(fd_from);
-		return (99);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_to);
+		close(fd_to);
+		exit(99);
 	}
 
 	result = read_from_file(fd_from, fd_to);
@@ -77,13 +77,13 @@ int copy_file(const char *file_from, const char *file_to)
 	{
 		close(fd_from);
 		close(fd_to);
-		return (99);
+		exit(99);
 	}
 
 	if (close(fd_from) == -1 || close(fd_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fd_from);
-		return (100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", file_from);
+		exit(100);
 	}
 	return (0);
 }
@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		print_error("Usage: cp file_from file_to");
-		return (97);
+		exit(97);
 	}
 
 	return (copy_file(argv[1], argv[2]));
