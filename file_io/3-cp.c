@@ -33,7 +33,7 @@ int read_from_file(int file_from, int file_to)
 		write_result = write(file_to, buffer, read_result);
 		if (write_result == -1 || write_result != read_result)
 		{
-			print_error("Error: Can't write to file");
+			dprintf(STDERR_FILENO, "Error: Can't write to %li", write_result);
 			return (-1);
 		}
 	}
