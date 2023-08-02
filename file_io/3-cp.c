@@ -82,8 +82,7 @@ int copy_file(const char *file_from, const char *file_to)
 
 	if (close(fd_from) == -1 || close(fd_to) == -1)
 	{
-		print_error("Error: Can't close fd");
-		dprintf(STDERR_FILENO, "%d", (fd_from == -1) ? fd_from : fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fd_from);
 		return (100);
 	}
 	return (0);
