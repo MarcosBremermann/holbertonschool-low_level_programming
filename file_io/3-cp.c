@@ -59,14 +59,14 @@ int copy_file(const char *file_from, const char *file_to)
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %i\n", fd_from);
 		return (98);
 	}
 
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, permissions);
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %i\n", fd_to);
 		close(fd_from);
 		return (99);
 	}
