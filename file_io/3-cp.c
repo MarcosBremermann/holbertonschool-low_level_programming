@@ -59,7 +59,8 @@ int copy_file(const char *file_from, const char *file_to)
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %i\n", fd_from);
+		print_error("Error: Can't read from file ");
+		dprintf(STDERR_FILENO, "%i\n", fd_from);
 		return (98);
 	}
 
